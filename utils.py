@@ -5,5 +5,6 @@ def get_content_type(file_path):
     """
     Returns the MIME type for a given file path.
     """
-    # TODO: Implement content type detection (e.g., using mimetypes module)
-    return 'application/octet-stream' 
+    import mimetypes
+    mime_type, _ = mimetypes.guess_type(file_path)
+    return mime_type or 'application/octet-stream' 
